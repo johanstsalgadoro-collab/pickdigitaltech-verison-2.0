@@ -1,0 +1,136 @@
+<!DOCTYPE html> <!-- Define que el documento es un HTML5 -->
+<html lang="es"> <!-- Define el idioma del contenido como español -->
+<head>
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace la página adaptable a pantallas de diferentes tamaños (responsiva) -->
+    <title>Registro de Cuenta</title> <!-- Título que se muestra en la pestaña del navegador -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Enlaza el archivo CSS para aplicar los estilos a la página -->
+</head>
+<body> <!-- Empieza el cuerpo de la página -->
+
+    <!-- Encabezado del sitio web -->
+    <header>
+        <!-- Contenedor del logo -->
+        <div class="logo">
+            <img src="imagenes/logo pickdigitaltech.jpg" alt="Logo de Pick Digital Tech"> <!-- Imagen del logo de la tienda -->
+        </div>
+
+        <!-- Barra de búsqueda donde el usuario puede buscar productos -->
+        <div class="search-bar">
+            <input type="text" placeholder="¿Qué estás buscando?" id="search"> <!-- Campo de texto para la búsqueda -->
+        </div>
+
+        <!-- Contenedor para el carrito y el botón de registro -->
+        <div class="header-right">
+            <!-- Carrito de compras -->
+            <div class="cart">
+                <button class="cart-btn" onclick="window.location.href='carrito.html'"> <!-- Botón para redirigir al carrito -->
+                    <img src="imagenes/carito.jpg" alt="Carrito de compras"> <!-- Icono de carrito -->
+                </button>
+            </div>
+
+            <!-- Botón de registro -->
+            <div class="register">
+                <button class="register-btn" onclick="window.location.href='registro.html'">Registrarse</button> <!-- Botón para redirigir a la página de registro -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <ul> <!-- Lista de enlaces para navegación -->
+            <li><a href="index.html">Inicio</a></li> <!-- Enlace a la página de inicio -->
+            <li><a href="productos.html">Productos</a></li> <!-- Enlace a la página de productos -->
+            <li><a href="#contacto">Contacto</a></li> <!-- Enlace que redirige a la sección de contacto -->
+        </ul>
+    </nav>
+
+    <!-- Contenido principal de la página -->
+    <main>
+        <!-- Sección de registro -->
+        <section class="register-section">
+            <h2>Crear una cuenta</h2> <!-- Título de la sección de registro -->
+            <form action="registro.php" method="POST" class="register-form"> <!-- Formulario de registro -->
+                <!-- Campo para ingresar el nombre completo -->
+                <div class="input-group">
+                    <label for="fullname">Nombre completo</label> <!-- Etiqueta para el campo del nombre -->
+                    <input type="text" id="fullname" name="fullname" placeholder="Escribe tu nombre completo" required> <!-- Campo de entrada para el nombre completo -->
+                </div>
+
+                <!-- Campo para ingresar el correo electrónico -->
+                <div class="input-group">
+                    <label for="email">Correo electrónico</label> <!-- Etiqueta para el correo electrónico -->
+                    <input type="email" id="email" name="email" placeholder="Escribe tu correo" required 
+                           pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|co)$" 
+                           title="El correo debe tener formato válido y finalizar en .com o .co"> <!-- Campo de entrada para el correo con validación de formato -->
+                </div>
+
+                <!-- Campo para ingresar el número de teléfono -->
+                <div class="input-group">
+                    <label for="phone">Número de teléfono (opcional)</label> <!-- Etiqueta para el campo de teléfono -->
+                    <input type="text" id="phone" name="phone" placeholder="Escribe tu número de teléfono" 
+                           pattern="\d+" title="Solo puedes ingresar números"> <!-- Campo de entrada para el teléfono con validación de solo números -->
+                </div>
+
+                <!-- Campo para ingresar la contraseña -->
+                <div class="input-group">
+                    <label for="password">Contraseña</label> <!-- Etiqueta para la contraseña -->
+                    <input type="password" id="password" name="password" placeholder="Escribe tu contraseña" required 
+                           pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" 
+                           title="La contraseña debe tener al menos 8 caracteres, una letra mayúscula, un número y un carácter especial (@, $, !, %, etc.)"> <!-- Campo de entrada para la contraseña con validación -->
+                    <button type="button" id="toggle-password"></button> <!-- Icono para mostrar/ocultar la contraseña -->
+                </div>
+
+                <!-- Campo para confirmar la contraseña -->
+                <div class="input-group">
+                    <label for="confirm-password">Confirmar Contraseña</label> <!-- Etiqueta para la confirmación de contraseña -->
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirma tu contraseña" required> <!-- Campo para confirmar la contraseña -->
+                </div>
+
+                <!-- Campo para ingresar la dirección -->
+                <div class="input-group">
+                    <label for="address">Dirección (opcional)</label> <!-- Etiqueta para la dirección -->
+                    <input type="text" id="address" name="address" placeholder="Escribe tu dirección"> <!-- Campo para ingresar la dirección -->
+                </div>
+
+                <!-- Botón de registro -->
+                <div class="input-group">
+                    <button type="submit" class="register-btn">Registrarse</button> <!-- Botón para enviar el formulario de registro -->
+                </div>
+
+                <!-- Enlace para redirigir al inicio de sesión -->
+                <p class="login-link">¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p> <!-- Enlace para que los usuarios con cuenta inicien sesión -->
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <section class="footer-info">
+            <p>¡Envío gratis en todas tus compras!</p> <!-- Texto promocional sobre envío gratis -->
+            <p>Paga como quieras. Recibe y paga en la puerta de tu casa.</p> <!-- Texto sobre métodos de pago -->
+        </section>
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="contact-section">
+            <h3>Contacto</h3> <!-- Título de la sección de contacto -->
+            <div class="contact-info">
+                <p><strong>Instagram:</strong> <a href="https://www.instagram.com/tu_instagram" target="_blank">tu_instagram</a></p> <!-- Enlace a Instagram -->
+                <p><strong>Correo Electrónico:</strong> <a href="mailto:tu_correo@ejemplo.com">tu_correo@ejemplo.com</a></p> <!-- Enlace de correo -->
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/123456789" target="_blank">123 456 789</a></p> <!-- Enlace de WhatsApp -->
+            </div>
+        </section>
+        <!-- Métodos de pago -->
+        <section class="methods">
+            <p>Métodos de pago:</p> <!-- Título de métodos de pago -->
+            <img src="imagenes/visa.webp" alt="Visa"> <!-- Logo de Visa -->
+            <img src="imagenes/mastercard.webp" alt="MasterCard"> <!-- Logo de MasterCard -->
+            <img src="imagenes/paypal.png" alt="PayPal"> <!-- Logo de PayPal -->
+        </section>
+    </footer>
+
+    <!-- Vincula el archivo JavaScript -->
+    <script src="script.js"></script> <!-- Enlaza el archivo JavaScript para agregar interactividad -->
+</body>
+</html>
+
+
